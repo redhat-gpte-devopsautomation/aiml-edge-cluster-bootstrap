@@ -50,13 +50,7 @@ install_gitops(){
 
 bootstrap_cluster(){
 
-  PS3="Please select a bootstrap folder: "
-  
-  select bootstrap_dir in bootstrap/overlays/*/; 
-  do
-      test -n "$bootstrap_dir" && break;
-      echo ">>> Invalid Selection";
-  done
+  bootstrap_dir="bootstrap/overlays/default/";
 
   echo "Selected: ${bootstrap_dir}"
   echo "Apply overlay to override default instance"
